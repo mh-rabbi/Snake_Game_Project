@@ -104,7 +104,7 @@ public class HelloApplication extends Application {
         }
     }
 
-    // tick
+    // snake food gaining and body tick
     public static void tick(GraphicsContext gc) {
         if (gameOver) {
             gc.setFill(Color.RED);
@@ -161,11 +161,11 @@ public class HelloApplication extends Application {
 
         // fill
         // background
-        gc.setFill(Color.BLACK);
+        gc.setFill(Color.YELLOW);
         gc.fillRect(0, 0, width * cornersize, height * cornersize);
 
         // score
-        gc.setFill(Color.RED);
+        gc.setFill(Color.GREEN);
         gc.setFont(new Font("", 30));
         gc.fillText("Score: " + (speed - 6), 10, 30);
 
@@ -180,7 +180,7 @@ public class HelloApplication extends Application {
                 cc = Color.LIGHTBLUE;
                 break;
             case 2:
-                cc = Color.YELLOW;
+                cc = Color.BLACK;
                 break;
             case 3:
                 cc = Color.PINK;
@@ -196,7 +196,7 @@ public class HelloApplication extends Application {
         for (Corner c : snake) {
             gc.setFill(Color.LIGHTGREEN);
             gc.fillRect(c.x * cornersize, c.y * cornersize, cornersize - 1, cornersize - 1);
-            gc.setFill(Color.GREEN);
+            gc.setFill(Color.BLACK);
             gc.fillRect(c.x * cornersize, c.y * cornersize, cornersize - 2, cornersize - 2);
 
         }
